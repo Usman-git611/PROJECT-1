@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <title>Contact | Hello World</title>
   <style>
     * {
       box-sizing: border-box;
@@ -14,13 +14,14 @@
       min-height: 100vh;
       display: grid;
       place-items: center;
+      padding: 6rem 1rem 2rem;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: #f8fafc;
       background:
-        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.28), transparent 30%),
-        radial-gradient(circle at 80% 10%, rgba(244, 114, 182, 0.25), transparent 28%),
+        radial-gradient(circle at 18% 22%, rgba(56, 189, 248, 0.28), transparent 30%),
+        radial-gradient(circle at 82% 18%, rgba(244, 114, 182, 0.25), transparent 28%),
         linear-gradient(135deg, #020617 0%, #111827 48%, #172554 100%);
-      overflow: hidden;
+      overflow-x: hidden;
     }
 
     body::before {
@@ -69,7 +70,7 @@
 
     .card {
       width: min(92vw, 760px);
-      padding: clamp(2rem, 7vw, 5rem);
+      padding: clamp(2rem, 6vw, 4.5rem);
       border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 28px;
       background: rgba(15, 23, 42, 0.64);
@@ -78,16 +79,6 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.24), transparent);
-      transform: translateX(-100%);
-      animation: shine 4s ease-in-out infinite;
-      pointer-events: none;
     }
 
     .badge {
@@ -114,8 +105,8 @@
 
     h1 {
       margin: 1.4rem 0 0.7rem;
-      font-size: clamp(3.3rem, 12vw, 7.5rem);
-      line-height: 0.92;
+      font-size: clamp(3rem, 10vw, 6rem);
+      line-height: 0.95;
       letter-spacing: 0;
       background: linear-gradient(90deg, #f8fafc, #7dd3fc, #f0abfc);
       -webkit-background-clip: text;
@@ -127,8 +118,39 @@
       margin: 0 auto;
       max-width: 560px;
       color: #cbd5e1;
-      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
       line-height: 1.7;
+    }
+
+    .contact-box {
+      margin: 2rem auto 0;
+      display: grid;
+      gap: 0.85rem;
+      max-width: 430px;
+    }
+
+    .contact-link {
+      display: block;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      color: #f8fafc;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.07);
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.13);
+      border-color: rgba(255, 255, 255, 0.34);
+    }
+
+    .contact-link span {
+      display: block;
+      margin-top: 0.25rem;
+      color: #bae6fd;
+      font-size: 0.95rem;
     }
 
     .actions {
@@ -165,36 +187,32 @@
       background: rgba(255, 255, 255, 0.14);
       border-color: rgba(255, 255, 255, 0.38);
     }
-
-    .button.primary:hover {
-      background: linear-gradient(135deg, #a5f3fc, #f5d0fe);
-    }
-
-    @keyframes shine {
-      0%, 45% {
-        transform: translateX(-100%);
-      }
-
-      70%, 100% {
-        transform: translateX(100%);
-      }
-    }
   </style>
 </head>
 <body>
   <nav class="site-nav" aria-label="Main navigation">
-    <a class="active" href="index.html">Home</a>
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a class="active" href="contact.html">Contact</a>
   </nav>
 
   <main class="card">
-    <div class="badge"><span class="dot"></span> First page online</div>
-    <h1>Hello World I am Usman :)</h1>
-    <p>A polished little starter page with glassy depth, glowing gradients, and a clean responsive layout.</p>
+    <div class="badge"><span class="dot"></span> Get in touch</div>
+    <h1>Say Hello</h1>
+    <p>Want to keep building this mini site? Use this page as the starting point for your real contact details.</p>
+    <div class="contact-box" aria-label="Contact options">
+      <a class="contact-link" href="mailto:hello@example.com">
+        Email
+        <span>hello@example.com</span>
+      </a>
+      <a class="contact-link" href="tel:+10000000000">
+        Phone
+        <span>+1 000 000 0000</span>
+      </a>
+    </div>
     <div class="actions">
-      <a class="button primary" href="about.html">Explore</a>
-      <a class="button" href="contact.html">Say Hello</a>
+      <a class="button primary" href="index.html">Back Home</a>
+      <a class="button" href="about.html">About Page</a>
     </div>
   </main>
 </body>
